@@ -1,0 +1,8 @@
+thrift-fb303 for Debian
+-----------------------
+
+<possible notes regarding this package - if none, delete this file>
+
+ -- Andrew Otto <otto@wikimedia.org  Mon 2 Jul 2012 17:10:55 -0500
+    deb packaging for fb303 packages was originally taken from https://github.com/simplegeo/thrift-fb303
+ -- goffinet <goffinet@digg.com>  Mon, 13 Apr 2009 19:32:45 -0700

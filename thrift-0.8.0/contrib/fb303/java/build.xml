@@ -47,8 +47,8 @@
   <property name="build.lib.dir" value="${build.dir}/lib"/>
   <property name="build.classes.dir" value="${build.dir}/classes"/>
 
-  <property name="fb303.jar.file" location="${build.dir}/${fb303.final.name}.jar"/>
-  <property name="fb303.pom.xml" location="${build.dir}/${fb303.final.name}.pom"/>
+  <property name="fb303.jar.file" location="${build.lib.dir}/${fb303.final.name}.jar"/>
+  <property name="fb303.pom.xml" location="${build.lib.dir}/${fb303.final.name}.pom"/>
 
   <target name="init" depends="setup.init,mvn.init" unless="init.finished">
     <property name="init.finished" value="true"/>
@@ -83,7 +83,7 @@
       <src path="${gen}"/>
       <include name="**/*.java"/>
     </javac>
-    <jar jarfile="${build.dir}/${fb303.final.name}.jar" basedir="${build.classes.dir}">
+    <jar jarfile="${build.lib.dir}/${fb303.final.name}.jar" basedir="${build.classes.dir}">
     </jar>
   </target>
 
@@ -93,11 +93,14 @@
       <fileset dir="${build.lib.dir}" includes="*.jar"/>
       <fileset dir="${build.lib.dir}" includes="${fb303.final.name}.jar"/>
     </copy>
+    <symlink link="${install.path}/${fb303.artifactid}.jar" resource="${install.path}/${fb303.final.name}.jar" />
   </target>
 
   <target name="clean">
     <delete dir="${build.dir}"/>
     <delete dir="${gen}"/>
+    <delete file="fb_status.java"/>
+    <delete file="FacebookService.java"/>
   </target>
 
   <target name="mvn.ant.tasks.download" depends="setup.init,mvn.ant.tasks.check" unless="mvn.ant.tasks.found">

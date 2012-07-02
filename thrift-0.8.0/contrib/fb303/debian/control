@@ -1,0 +1,42 @@
+Source: thrift-fb303
+Section: misc
+Priority: extra
+Maintainer: goffinet <goffinet@digg.com>
+Build-Depends: debhelper (>= 5), autotools-dev, autoconf, automake, libtool, libthrift-dev, libboost-dev, thrift-compiler, python, python-thrift
+Standards-Version: 3.8.4
+
+Package: thrift-fb303
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Facebook's contrib fb303 library
+ A standard interface to monitoring, dynamic options and
+ configuration, uptime reports, activity, etc.
+
+Package: libfb303-java
+Architecture: any
+Section: java
+Depends: ${misc:Depends}, java-common
+Description: Java bindings for Thrift
+ A Java/Thrift standard interface to monitoring, dynamic options and
+ configuration, uptime reports, activity, etc.
+ .
+ This package contains the Java bindings for fb303 via Thrift. You will need the thrift
+ tool (in the thrift-compiler package) to compile your definition to Java
+ classes, and then the modules in this package will allow you to use those
+ classes in your programs.
+
+Package: python-fb303
+Architecture: any
+XB-Python-Version: ${python:Versions}
+Section: python
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Recommends: python-twisted-core
+Provides: ${python:Provides}
+Description: Python bindings for Thrift
+ A Python/Thrift standard interface to monitoring, dynamic options and
+ configuration, uptime reports, activity, etc.
+ .
+ This package contains the Python bindings for fb303 via Thrift. You will need the thrift
+ tool (in the thrift-compiler package) to compile your definition to Java
+ classes, and then the modules in this package will allow you to use those
+ classes in your programs.
