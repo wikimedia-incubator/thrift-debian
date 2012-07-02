@@ -50,6 +50,6 @@ ls ./*.deb
 
 cd $repo_root
 mkdir -p deb
-mv -v {${repo_roo},${repo_root}/thrift-${THRIFT_VERSION}}/*{.deb,dsc,changes,${THRIFT_VERSION}.tar.gz} ${repo_root}/deb/
+mv -v ${repo_root}/{,/thrift-${THRIFT_VERSION}/contrib}/*{.deb,dsc,changes,${THRIFT_VERSION}.tar.gz} ${repo_root}/deb/
 
 echo "If you are ready, now commit and push your changes".
