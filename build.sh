@@ -3,6 +3,9 @@
 # This repository exists for building thrift deb packages
 # for the Wikimedia Foundation.
 
+# TODO: 
+# - handle releases of thrift
+
 # Must be root to install packages
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
