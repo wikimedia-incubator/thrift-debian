@@ -31,9 +31,16 @@ dpkg-buildpackage
 cd ${repo_root}
 echo "Built these .deb files:"
 ls ./*.deb
+mkdir -p deb
+mv ${repo_root}/*{.deb,dsc,changes,${THRIFT_VERSION}.tar.gz} ${repo_root}/deb/
 
-  
 ## Build thrift-fb303 packages
+# We need to install libthrift0, libthrift-dev, thrift-compiler, 
+# and python-thrift in order to compile fb303.  Go ahead and install
+# these from the newly created debs.
+echo "Installing newly created debs for libthrift0, libthrift-dev, thrift-compiler and python-thrift in order to install create fb303 packages."
+dpkg -i ${repo_root}/deb/{libthrift0_0.8.0_amd64.deb,thrift-compiler_0.8.0_amd64.deb,libthrift-dev_0.8.0_amd64.deb,python-thrift_0.8.0_amd64.deb}
+
 cd ${repo_root}/thrift-$THRIFT_VERSION/contrib/fb303
 echo "Building fb303 packages..."
 dpkg-buildpackage
@@ -49,7 +56,6 @@ ls ./*.deb
 # Now move the created .deb, .changes, .dsc, and source files into deb/
 
 cd $repo_root
-mkdir -p deb
-mv -v ${repo_root}/{,/thrift-${THRIFT_VERSION}/contrib}/*{.deb,dsc,changes,${THRIFT_VERSION}.tar.gz} ${repo_root}/deb/
+mv -v ${repo_root}/thrift-${THRIFT_VERSION}/contrib/*{.deb,dsc,changes,${THRIFT_VERSION}.tar.gz} ${repo_root}/deb/
 
 echo "If you are ready, now commit and push your changes".
