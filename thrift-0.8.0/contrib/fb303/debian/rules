@@ -24,12 +24,19 @@ else
 	CFLAGS += -O2
 endif
 
+# Define both of these so that inttypes.h and netinet/in.h get included
+# when compiling agains Thrift header classes.
+# See: http://mail-archives.apache.org/mod_mbox/thrift-dev/201112.mbox/%3C486737906.3.1323647431293.JavaMail.tomcat@hel.zones.apache.org%3E
+
+CFLAGS += -DHAVE_NETINET_IN_H -DHAVE_INTTYPES_H
+CPPFLAGS = -DHAVE_NETINET_IN_H -DHAVE_INTTYPES_H
+
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
 	$(CURDIR)/bootstrap.sh
-	$(CURDIR)/configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info --with-thriftpath=/usr CFLAGS="$(CFLAGS)" LDFLAGS="-Wl,-z,defs"
+	$(CURDIR)/configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info --with-thriftpath=/usr CFLAGS="$(CFLAGS)" LDFLAGS="-Wl,-z,defs" CPPFLAGS="$(CPPFLAGS)"
 	touch configure-stamp
 
 
