@@ -3,7 +3,11 @@
 # This repository exists for building thrift deb packages
 # for the Wikimedia Foundation.
 
-# To build debs:
+# Must be root to install packages
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
 
 # Set thrift version to the version you'd like to build
 THRIFT_VERSION="0.8.0"
