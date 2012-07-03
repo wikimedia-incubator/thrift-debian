@@ -21,7 +21,7 @@
 
 @PRODUCT_MK@
 
-SUBDIRS = . cpp py java
+SUBDIRS = . cpp py
 
 BUILT_SOURCES =
 

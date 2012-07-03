@@ -49,6 +49,9 @@ build-stamp:  configure-stamp
 	$(MAKE)
 	#docbook-to-man debian/thrift-fb303.sgml > thrift-fb303.1
 
+	# -- libfb303-java
+	cd $(CURDIR)/java && ant -Dinstall.path=$(CURDIR)/debian/libfb303-java/usr/share/java
+
 	touch $@
 
 clean:
@@ -59,6 +62,8 @@ clean:
 
 	# Add here commands to clean up after the build process.
 	-$(MAKE) distclean
+
+
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
 	cp -f /usr/share/misc/config.sub config.sub
 endif
@@ -66,6 +71,8 @@ ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 	cp -f /usr/share/misc/config.guess config.guess
 endif
 
+	# -- libfb303-java
+	cd $(CURDIR)/java && ant -Dinstall.path=$(CURDIR)/debian/libfb303-java/usr/share/java clean
 
 	dh_clean 
 
@@ -79,7 +86,7 @@ install: build
 	$(MAKE) DESTDIR=$(CURDIR)/debian/thrift-fb303 install
 
 	# -- libfb303-java
-	$(MAKE) DESTDIR=$(CURDIR)/debian/libfb303-java install
+	cd $(CURDIR)/java && ant -Dinstall.path=$(CURDIR)/debian/libfb303-java/usr/share/java install
 
     # -- python-fb303
 	cd $(CURDIR)/py && python setup.py install --no-compile --root=$(CURDIR)/debian/python-fb303; 

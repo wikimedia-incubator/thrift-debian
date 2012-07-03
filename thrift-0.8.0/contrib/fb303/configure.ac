@@ -76,7 +76,7 @@ AX_BOOST_BASE([1.33.1])
 
 # Generates Makefile from Makefile.am. Modify when new subdirs are added.
 # Change Makefile.am also to add subdirectly.
-AC_CONFIG_FILES(Makefile cpp/Makefile py/Makefile java/Makefile)
+AC_CONFIG_FILES(Makefile cpp/Makefile py/Makefile)
 
 ############################################################################
 # DO NOT TOUCH.
