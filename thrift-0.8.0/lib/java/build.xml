@@ -141,9 +141,11 @@
 
   <target name="install" depends="dist,javadoc">
     <copy todir="${install.path}">
-      <fileset dir="${build.dir}" includes="*.jar"/>
-      <fileset dir="${build.lib.dir}" includes="*.jar"/>
+      <fileset dir="${build.dir}" includes="${final.name}.jar"/>
+      <!-- <fileset dir="${build.lib.dir}" includes="*.jar"/> -->
     </copy>
+    <symlink link="${install.path}/${thrift.artifactid}.jar" resource="${install.path}/${final.name}.jar" />
+
     <copy todir="${install.javadoc.path}">
       <fileset dir="${javadoc.dir}" includes="**/*"/>
     </copy>

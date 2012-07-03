@@ -47,10 +47,10 @@ build-arch-stamp: configure-stamp
 
 	# Python library
 	cd $(CURDIR)/lib/py && \
-    for py in $(PYVERS); do  \
-        $$py setup.py build; \
-        $$py-dbg setup.py build; \
-    done
+	for py in $(PYVERS); do  \
+		$$py setup.py build; \
+		$$py-dbg setup.py build; \
+	done
 
 	# PHP
 	cd $(CURDIR)/lib/php/src/ext/thrift_protocol && \
@@ -59,15 +59,11 @@ build-arch-stamp: configure-stamp
 
 	touch $@
 
-build-indep: build-indep-stamp
+build-indep: build-indep-stamp build-arch
 build-indep-stamp: configure-stamp
 
 	# Add here commands to compile the indep part of the package.
 	#$(MAKE) doc
-
-	# Java
-	cd $(CURDIR)/lib/java && \
-		ant
 
 	# Erlang
 	# $(MAKE) -C $(CURDIR)/lib/erl
@@ -78,12 +74,18 @@ build-indep-stamp: configure-stamp
 	# Perl
 	$(MAKE) -C $(CURDIR)/lib/perl INSTALLDIRS=vendor
 
+	# -- libthrift-java
+	cd $(CURDIR)/lib/java && ant
+
 	touch $@
 
 clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-arch-stamp build-indep-stamp configure-stamp
+
+	# -- libthrift-java
+	cd $(CURDIR)/lib/java && ant clean
 
 	# Add here commands to clean up after the build process.
 	-$(MAKE) clean
@@ -101,10 +103,11 @@ install-indep:
 	# debian/<package>-doc.
 	#INSTALLDOC#
 
-        # Java
-	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/java/ && \
-	cp $(CURDIR)/lib/java/build/libthrift*.jar \
-		$(CURDIR)/debian/libthrift-java/usr/share/java/
+	# -- libthrift-java
+	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/java && cd $(CURDIR)/lib/java && ant -Dinstall.path=$(CURDIR)/debian/libthrift-java/usr/share/java -Dinstall.javadoc.path=$(CURDIR)/debian/libfb303-java/usr/share/doc/libthrift-java
+
+#	cp $(CURDIR)/lib/java/build/libthrift*.jar \
+#		$(CURDIR)/debian/libthrift-java/usr/share/java/
 
 	# Erlang
 	# mkdir -p $(CURDIR)/debian/libthrift-erlang/usr/lib/erlang/lib/thrift/ && \
