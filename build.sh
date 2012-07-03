@@ -67,8 +67,6 @@ function build_fb303
 
 	cd $repo_root
 	mv -v ${repo_root}/thrift-${THRIFT_VERSION}/contrib/*{.deb,dsc,changes,${THRIFT_VERSION}.tar.gz} ${repo_root}/deb/
-
-	echo "If you are ready, now commit and push your changes".
 }
 
 packages=$1
