@@ -1,0 +1,37 @@
+Format: 1.8
+Date: Mon, 2 July 2012 16:09:52 -0500
+Source: thrift-fb303
+Binary: thrift-fb303 libfb303-java python-fb303
+Architecture: source amd64
+Version: 0.8.0
+Distribution: unstable
+Urgency: low
+Maintainer: goffinet <goffinet@digg.com>
+Changed-By: Andrew Otto <otto@wikimedia.org>
+Description: 
+ libfb303-java - Java bindings for Thrift
+ python-fb303 - Python bindings for Thrift
+ thrift-fb303 - Facebook's contrib fb303 library
+Changes: 
+ thrift-fb303 (0.8.0) unstable; urgency=low
+ .
+   * Adding libfb303-java and python-fb303 to deb control list.
+   * Compiling against thrift-0.8.0
+Checksums-Sha1: 
+ b5d829a6f129f4a6c756d9db3eeaa13b3e92dad8 609 thrift-fb303_0.8.0.dsc
+ ac3ead5c3da75ceecba3047821281565bf857037 52994 thrift-fb303_0.8.0.tar.gz
+ 5ae2b4962164295d666b334766730985dd44189c 344136 thrift-fb303_0.8.0_amd64.deb
+ 170232dc1894d0c13d22ac58568bda1fbd20d8c0 354898 libfb303-java_0.8.0_amd64.deb
+ 5829ca58b7b619772ed56cfcc987c79b1bb6872a 9664 python-fb303_0.8.0_amd64.deb
+Checksums-Sha256: 
+ 5716ef6fe7e5a4ba717c156e0c2a9c5f022cbf8a37bf081d865cb97b33a083a3 609 thrift-fb303_0.8.0.dsc
+ 00dfa9eb45c47bb610182cd7a353afc6151647c596a9262404eb32c8a41b5074 52994 thrift-fb303_0.8.0.tar.gz
+ f59e11300d907e74ac8c8c2da67fa063daf6da98e30aca5044fbf8958722e3e8 344136 thrift-fb303_0.8.0_amd64.deb
+ a9bbceb648a48ead1551babfd0bfabaec5b708bcd57dad0bdd8725f3976f6e53 354898 libfb303-java_0.8.0_amd64.deb
+ c270b48bdaea88de0cb1f55bec560d14048367cbada19e24dee422498ffaf911 9664 python-fb303_0.8.0_amd64.deb
+Files: 
+ b98c4127aeb3fd7b949d825aa33191ef 609 misc extra thrift-fb303_0.8.0.dsc
+ dfcf789d21454e79af29864d6fd61743 52994 misc extra thrift-fb303_0.8.0.tar.gz
+ 5682fdbf543a6ad541a4404b81f85545 344136 misc extra thrift-fb303_0.8.0_amd64.deb
+ ffa624b41dea3002cf8cbafdc5298b1a 354898 java extra libfb303-java_0.8.0_amd64.deb
+ 1bb4657623810c0905940603dc445902 9664 python extra python-fb303_0.8.0_amd64.deb

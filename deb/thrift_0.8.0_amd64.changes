@@ -1,0 +1,68 @@
+Format: 1.8
+Date: Sat, 26 Nov 2011 13:00:00 -0500
+Source: thrift
+Binary: thrift-compiler python-thrift python-thrift-dbg libthrift-ruby libthrift-java libthrift-cil libthrift-erlang libthrift-perl libthrift0 libthrift-dev php5-thrift
+Architecture: source amd64 all
+Version: 0.8.0
+Distribution: stable
+Urgency: low
+Maintainer: Thrift Developer's <dev@thrift.apache.org>
+Changed-By: Jake Farrell <jfarrell@apache.org>
+Description: 
+ libthrift-cil - CLI bindings for Thrift
+ libthrift-dev - Thrift C++ library (development headers)
+ libthrift-erlang - Erlang bindings for Thrift
+ libthrift-java - Java bindings for Thrift
+ libthrift-perl - Perl bindings for Thrift
+ libthrift-ruby - Ruby bindings for Thrift
+ libthrift0 - Thrift C++ library
+ php5-thrift - PHP bindings for Thrift
+ python-thrift - Python bindings for Thrift
+ python-thrift-dbg - Python bindings for Thrift (debug version)
+ thrift-compiler - Compiler for Thrift definition files
+Changes: 
+ thrift (0.8.0) stable; urgency=low
+ .
+   * update to 0.8.0
+Checksums-Sha1: 
+ f363d31182edc6e3c66f4850b0bcbeca3ff40c5e 1198 thrift_0.8.0.dsc
+ dedc7ee2cdb108940a266815daf0222ada9ea660 2430337 thrift_0.8.0.tar.gz
+ 03a3ee9ecd136146b908edf9cc8aa12e80d2cc27 960792 thrift-compiler_0.8.0_amd64.deb
+ 138bc48a4854961c2b8d0ded6e1f341ff43a02d6 35424 python-thrift_0.8.0_amd64.deb
+ bf8582543eba1db2397045172bb4c397a0ad35e2 73788 python-thrift-dbg_0.8.0_amd64.deb
+ 8faf2bdb04a07efe693aaeea2f510afe2f63260e 3662 libthrift-ruby_0.8.0_amd64.deb
+ c788c55c8d58176db86abead659fd008774e58b5 26916 libthrift0_0.8.0_amd64.deb
+ 905a6a11039e32900d0c3db01642fc391434d876 548252 libthrift-dev_0.8.0_amd64.deb
+ af4191b60bfd847506fa963b2fc106400ad89c94 36780 php5-thrift_0.8.0_amd64.deb
+ 14283936773f50e4aeceea49564180bd6acf4a8c 310456 libthrift-java_0.8.0_all.deb
+ bbe6dbb64c64cc565afdc5827a243e8dcbffffa6 21646 libthrift-cil_0.8.0_all.deb
+ a17e35ec1d0a752ba43aaa3630768a264deeaafc 3648 libthrift-erlang_0.8.0_all.deb
+ cea1e5810204f8ce43a1cfadcd0e418a4f6be028 13326 libthrift-perl_0.8.0_all.deb
+Checksums-Sha256: 
+ 98f596d54140caed9aee5a589761dc65e6ace71cd09d0a5e76fe09aed8ee930b 1198 thrift_0.8.0.dsc
+ 0c0ab8301005ec2140d4832e744a1dc8d4551d9fc7855f9a69dc68ce6ecc1086 2430337 thrift_0.8.0.tar.gz
+ 7ef19fe5329a9c7743e2503eb2eb8b1f7482488353769fd4d4e82a02151fc86f 960792 thrift-compiler_0.8.0_amd64.deb
+ 8dc39238b15c0921529ce14358ccad434d5958e1b24437a5dbfef3ed5bc9ff54 35424 python-thrift_0.8.0_amd64.deb
+ 1f3aec8056588f61bac3c435e88328fd621e2896c4da85d86ddd6e77a68aa4bf 73788 python-thrift-dbg_0.8.0_amd64.deb
+ d32f3981d6d782ee3f01cdd642ce81d6da0055882ffaa2ffa1a160f6f7798119 3662 libthrift-ruby_0.8.0_amd64.deb
+ 08f2ea788c04fb6b954efa6e9a44966873a90cba23bd025daad7a9651fcec7a8 26916 libthrift0_0.8.0_amd64.deb
+ c0740fa3355559a841c97f0755632df7205aae5aacc6de3d29fd4781a945d9a4 548252 libthrift-dev_0.8.0_amd64.deb
+ a9646f04f68f9b5cf49a165cd2a5f284f81b71bbb58f0aacea0bfce8dcfe7321 36780 php5-thrift_0.8.0_amd64.deb
+ 2f80d5be8afcb4eb633dc7d1ad3e130b8907dd19c6323232bc6c8e01802fb143 310456 libthrift-java_0.8.0_all.deb
+ 91056da20b6d9eaada752278621cbb251b75213c52728e1c601e771cdcefe075 21646 libthrift-cil_0.8.0_all.deb
+ 61e364ce4ee06db1d39060ee5d2038f64f8004dcd0d8765350887a9ab55cc778 3648 libthrift-erlang_0.8.0_all.deb
+ ff4ea491cb4dec18664b185fc79af5f7445fa5b1c04b4217e172b42871650614 13326 libthrift-perl_0.8.0_all.deb
+Files: 
+ 22e9eb7b03e4c2a0bf9c415c2e4ab5a1 1198 devel extra thrift_0.8.0.dsc
+ e1d4ca37fbe4d86d01eaaa25eea83cb0 2430337 devel extra thrift_0.8.0.tar.gz
+ c5516c07166e9c10d73ae898173654da 960792 devel extra thrift-compiler_0.8.0_amd64.deb
+ 3e0131aac52eba8fb5997e0f421608eb 35424 python extra python-thrift_0.8.0_amd64.deb
+ 1f69664a1b1b61d57474ae3410b5607e 73788 python extra python-thrift-dbg_0.8.0_amd64.deb
+ 6678f93ed78351f7d27dc68fb61a4cf0 3662 libs extra libthrift-ruby_0.8.0_amd64.deb
+ 994a6eaf7580dfa631807e1bb6219282 26916 devel extra libthrift0_0.8.0_amd64.deb
+ aed30c58514465c0423979d6b878e0f3 548252 libdevel extra libthrift-dev_0.8.0_amd64.deb
+ 35909e4a23a1ad26b76141bc5fe3c4be 36780 php extra php5-thrift_0.8.0_amd64.deb
+ 2f0fa287801a8b6efaee105fbbe327e6 310456 libs extra libthrift-java_0.8.0_all.deb
+ 8ef5f34696a002996b1feeccdcfdc6b4 21646 libs extra libthrift-cil_0.8.0_all.deb
+ c28e6f729a47f799dd0fe78f4cb91885 3648 libs extra libthrift-erlang_0.8.0_all.deb
+ 7ba6a722680f9dd04345dd48ea940e01 13326 perl extra libthrift-perl_0.8.0_all.deb
