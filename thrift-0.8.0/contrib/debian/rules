@@ -104,7 +104,9 @@ install-indep:
 	#INSTALLDOC#
 
 	# -- libthrift-java
-	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/java && cd $(CURDIR)/lib/java && ant -Dinstall.path=$(CURDIR)/debian/libthrift-java/usr/share/java -Dinstall.javadoc.path=$(CURDIR)/debian/libfb303-java/usr/share/doc/libthrift-java
+	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/java, && \ 
+	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/doc/libthrift-java && \
+	cd $(CURDIR)/lib/java && ant -Dinstall.path=$(CURDIR)/debian/libthrift-java/usr/share/java -Dinstall.javadoc.path=$(CURDIR)/debian/libthrift-java/usr/share/doc/libthrift-java install
 
 #	cp $(CURDIR)/lib/java/build/libthrift*.jar \
 #		$(CURDIR)/debian/libthrift-java/usr/share/java/
