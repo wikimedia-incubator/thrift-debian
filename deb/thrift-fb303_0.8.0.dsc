@@ -7,8 +7,8 @@ Maintainer: goffinet <goffinet@digg.com>
 Standards-Version: 3.8.4
 Build-Depends: debhelper (>= 5), autotools-dev, autoconf, automake, libtool, libthrift-dev, libboost-dev, thrift-compiler, python, python-thrift
 Checksums-Sha1: 
- ac3ead5c3da75ceecba3047821281565bf857037 52994 thrift-fb303_0.8.0.tar.gz
+ 203c039be4c638eca3c6a6721b128f8793649c15 126552 thrift-fb303_0.8.0.tar.gz
 Checksums-Sha256: 
- 00dfa9eb45c47bb610182cd7a353afc6151647c596a9262404eb32c8a41b5074 52994 thrift-fb303_0.8.0.tar.gz
+ 5c1e9898e93bd89cc0fb0788fb971d9dcf85eb9b881c1ec5da702b125c202b80 126552 thrift-fb303_0.8.0.tar.gz
 Files: 
- dfcf789d21454e79af29864d6fd61743 52994 thrift-fb303_0.8.0.tar.gz
+ 860c66fa0e9bc887dcaadd2887a06a03 126552 thrift-fb303_0.8.0.tar.gz
