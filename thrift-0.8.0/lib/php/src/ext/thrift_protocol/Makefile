@@ -1,7 +1,7 @@
-srcdir = /root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
-builddir = /root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
-top_srcdir = /root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
-top_builddir = /root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
+srcdir = /root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
+builddir = /root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
+top_srcdir = /root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
+top_builddir = /root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol
 EGREP = /bin/grep -E
 SED = /bin/sed
 CONFIGURE_COMMAND = './configure'
@@ -22,7 +22,7 @@ prefix = /usr
 exec_prefix = $(prefix)
 libdir = ${exec_prefix}/lib
 prefix = /usr
-phplibdir = /root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol/modules
+phplibdir = /root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol/modules
 phpincludedir = /usr/include/php5
 CC = cc
 CFLAGS = -g -O2
@@ -161,8 +161,8 @@ distclean: clean
 
 .PHONY: all clean install distclean test
 .NOEXPORT:
-php_thrift_protocol.lo: /root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol/php_thrift_protocol.cpp
-	$(LIBTOOL) --mode=compile $(CXX)  -I. -I/root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol $(COMMON_FLAGS) $(CXXFLAGS_CLEAN) $(EXTRA_CXXFLAGS)  -c /root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol/php_thrift_protocol.cpp -o php_thrift_protocol.lo 
+php_thrift_protocol.lo: /root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol/php_thrift_protocol.cpp
+	$(LIBTOOL) --mode=compile $(CXX)  -I. -I/root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol $(COMMON_FLAGS) $(CXXFLAGS_CLEAN) $(EXTRA_CXXFLAGS)  -c /root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol/php_thrift_protocol.cpp -o php_thrift_protocol.lo 
 $(phplibdir)/thrift_protocol.la: ./thrift_protocol.la
 	$(LIBTOOL) --mode=install cp ./thrift_protocol.la $(phplibdir)
 

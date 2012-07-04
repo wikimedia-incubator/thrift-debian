@@ -442,7 +442,7 @@ Copyright (C) 2009 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/root/deb/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol'
+ac_pwd='/root/deb/build/thrift/thrift-0.8.0/lib/php/src/ext/thrift_protocol'
 srcdir='.'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
@@ -651,7 +651,7 @@ finish_cmds='PATH="\$PATH:/sbin" ldconfig -n $libdir'
 finish_eval=''
 hardcode_into_libs='yes'
 sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/4.4.3 /usr/lib /lib'
-sys_lib_dlsearch_path_spec='/lib /usr/lib /usr/lib/mesa /usr/lib32/mesa /usr/lib/alsa-lib /usr/local/lib /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu '
+sys_lib_dlsearch_path_spec='/lib /usr/lib /usr/lib/mesa /usr/lib32/mesa /usr/lib/alsa-lib /usr/local/lib /usr/lib64 /usr/lib64 /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu '
 hardcode_action='immediate'
 enable_dlopen='unknown'
 enable_dlopen_self='unknown'
