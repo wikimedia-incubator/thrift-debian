@@ -103,20 +103,12 @@ install-indep:
 	# debian/<package>-doc.
 	#INSTALLDOC#
 
-	# -- libthrift-java
-	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/java && \ 
-	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/doc/libthrift-java && \
-	cd $(CURDIR)/lib/java && ant -Dinstall.path=$(CURDIR)/debian/libthrift-java/usr/share/java -Dinstall.javadoc.path=$(CURDIR)/debian/libthrift-java/usr/share/doc/libthrift-java install
-
-#	cp $(CURDIR)/lib/java/build/libthrift*.jar \
-#		$(CURDIR)/debian/libthrift-java/usr/share/java/
-
 	# Erlang
 	# mkdir -p $(CURDIR)/debian/libthrift-erlang/usr/lib/erlang/lib/thrift/ && \
 	# cp -r $(CURDIR)/lib/erl/ebin \
-	#	$(CURDIR)/lib/erl/include \
-	#	$(CURDIR)/lib/erl/src \
-	#	$(CURDIR)/debian/libthrift-erlang/usr/lib/erlang/lib/thrift/
+	# 	$(CURDIR)/lib/erl/include \
+	# 	$(CURDIR)/lib/erl/src \
+	# 	$(CURDIR)/debian/libthrift-erlang/usr/lib/erlang/lib/thrift/
 
 	# C#
 	mkdir -p $(CURDIR)/debian/libthrift-cil/usr/lib/cli/thrift/ && \
@@ -125,6 +117,9 @@ install-indep:
 
 	# Perl
 	$(MAKE) -C $(CURDIR)/lib/perl install DESTDIR=$(CURDIR)/debian/libthrift-perl/usr
+
+	# -- libthrift-java
+	mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/java && mkdir -p $(CURDIR)/debian/libthrift-java/usr/share/doc/libthrift-java && cd $(CURDIR)/lib/java && ant -Dinstall.path=$(CURDIR)/debian/libthrift-java/usr/share/java -Dinstall.javadoc.path=$(CURDIR)/debian/libthrift-java/usr/share/doc/libthrift-java install
 
 	dh_install -i
 
