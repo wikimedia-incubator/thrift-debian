@@ -15,18 +15,18 @@ fi
 # Set thrift version to the version you'd like to build
 THRIFT_VERSION="0.8.0"
 repo_root="${PWD}"
-cd thrift-${THRIFT_VERSION}
 
 function build_thrift {
 	## Build thrift packages
 	echo "Building thrift packages..."
+
+	cd ${repo_root}/thrift-${THRIFT_VERSION}
 	dpkg-buildpackage
 
 	# This should build:
 	# - libthrift0_0.8.0_amd64.deb
 	# - libthrift-cil_0.8.0_all.deb
 	# - libthrift-dev_0.8.0_amd64.deb
-	# - libthrift-erlang_0.8.0_all.deb
 	# - libthrift-java_0.8.0_all.deb
 	# - libthrift-perl_0.8.0_all.deb
 	# - libthrift-ruby_0.8.0_amd64.deb
@@ -49,10 +49,12 @@ function build_fb303
 	# and python-thrift in order to compile fb303.  Go ahead and install
 	# these from the newly created debs.
 	echo "Installing newly created debs for libthrift0, libthrift-dev, thrift-compiler and python-thrift in order to install create fb303 packages."
-	dpkg -i ${repo_root}/deb/{libthrift0_0.8.0_amd64.deb,thrift-compiler_0.8.0_amd64.deb,libthrift-dev_0.8.0_amd64.deb,python-thrift_0.8.0_amd64.deb}
+	# uninstall these packages first
+	dpkg -r libthrift0 thrift-compiler libthrift-dev python-thrift
+	dpkg -i ${repo_root}/deb/{libthrift0_0.8.0_amd64.deb,thrift-compiler_0.8.0_amd64.deb,libthrift-dev_0.8.0_amd64.deb,python-thrift_0.8.0_amd64.deb} || (echo "Could not install dependencies for fb303 packages." && exit 1)
 
-	cd ${repo_root}/thrift-$THRIFT_VERSION/contrib/fb303
 	echo "Building fb303 packages..."
+	cd ${repo_root}/thrift-$THRIFT_VERSION/contrib/fb303
 	dpkg-buildpackage
 
 	# This should builds:
