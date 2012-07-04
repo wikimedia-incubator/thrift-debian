@@ -8,7 +8,6 @@ Currently only 0.8.0 builds are supported.  Run ./build.sh to build the followin
 - libthrift0_0.8.0_amd64.deb
 - libthrift-cil_0.8.0_all.deb
 - libthrift-dev_0.8.0_amd64.deb
-- libthrift-erlang_0.8.0_all.deb
 - libthrift-java_0.8.0_all.deb
 - libthrift-perl_0.8.0_all.deb
 - libthrift-ruby_0.8.0_amd64.deb
