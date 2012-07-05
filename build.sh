@@ -99,6 +99,5 @@ case $packages in
 		build_thrift;
 		build_fb303;
 		;;
-	* )
-		echo "  Usage: $0 thrift|fb303|all     (default: all)"
+	* ) echo -e "\n  Usage: $0 [thrift|fb303|all] [thrift_version]\n  or just $0, which is equivalent to $0 all ${thrift_version}\n"
 esac

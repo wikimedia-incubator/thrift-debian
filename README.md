@@ -1,25 +1,17 @@
 This repository exists for building thrift deb packages
-for the Wikimedia Foundation.  
+for the Wikimedia Foundation.
+
+deb packages in deb/ were built on amd64 Ubuntu 10.04.4 LTS
+
+## To Build
+  ./build.sh [thrift|fb303|all] [thrift_version]
+or just 
+  ./build.sh
+which is equivalent to 
+  ./build.sh all 0.2.0
 
 
-## Build
-Currently only 0.8.0 builds are supported.  Run ./build.sh to build the following .debs:
+## Notes
+thrift-0.8.0 was downloaded from http://www.apache.org/dyn/closer.cgi?path=/thrift/0.8.0/thrift-0.8.0.tar.gz.  Modifications were made to debian rules and control files, as well as java build.xml files to build the final deb packages. 
 
-- libthrift0_0.8.0_amd64.deb
-- libthrift-cil_0.8.0_all.deb
-- libthrift-dev_0.8.0_amd64.deb
-- libthrift-java_0.8.0_all.deb
-- libthrift-perl_0.8.0_all.deb
-- libthrift-ruby_0.8.0_amd64.deb
-- php5-thrift_0.8.0_amd64.deb
-- python-thrift_0.8.0_amd64.deb
-- python-thrift-dbg_0.8.0_amd64.deb
-- thrift-compiler_0.8.0_amd64.deb
-- python-fb303_0.8.0_amd64.deb
-- libfb303-java_0.8.0_amd64.deb
-- thrift-fb303_0.8.0_amd64.deb
-
-Or just grab the packages you need from the deb/ directory.  
-
-## Releases
-- thrift-0.8.0 was downloaded from http://www.apache.org/dyn/closer.cgi?path=/thrift/0.8.0/thrift-0.8.0.tar.gz
+thrift-0.2.0 was originally cloned from https://github.com/simplegeo/thrift.  thrift-0.2.0/contrib/fb303/debian was copied from the debian directory included with 0.8.0 in thrift-0.8.0/contrib/fb303/debian.  rules and control files were modified, as well as java build.xml files. 
