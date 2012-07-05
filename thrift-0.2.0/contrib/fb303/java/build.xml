@@ -59,7 +59,9 @@
     <echo>Building libfb303.jar .... </echo>
     <javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="on">
       <classpath>
-        <pathelement location="${thrift_home}/lib/libthrift.jar"/>
+        <pathelement location="${thrift_home}/share/java/libthrift.jar"/>
+        <pathelement location="${thrift_home}/share/java/slf4j-api.jar"/>
+        <pathelement location="${thrift_home}/share/java/log4j-1.2.jar"/>
       </classpath>
       <include name="*.java"/>
       <include name="${build.dir}/gen-java/com/facebook/fb303"/>
